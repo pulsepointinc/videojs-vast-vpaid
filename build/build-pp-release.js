@@ -15,7 +15,7 @@ gulp.task('pp-release', function() {
         });
     },
     postReleasePromise: function () {
-        return deployTool.forProject().withGroupId('com.mailonline.videojs').mavenDeployAndNexusUpload('dev');
+        return deployTool.forProject().mavenDeployAndNexusUpload('bin');
     },
   });
 });
