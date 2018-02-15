@@ -66,6 +66,8 @@ module.exports = function (karma) {
       //'Safari',
       'Firefox',
       'Chrome'
-    ]
+    ],
+
+    browserDisconnectTolerance: 10
   });
 };
