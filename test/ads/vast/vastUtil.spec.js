@@ -1,5 +1,5 @@
 var vastUtil = require('ads/vast/vastUtil');
-var VPAIDFLASHClient = require('VPAIDFLASHClient/js/VPAIDFLASHClient');
+// var VPAIDFLASHClient = require('VPAIDFLASHClient/js/VPAIDFLASHClient');
 var VPAIDFlashTech = require('ads/vpaid/VPAIDFlashTech');
 var VPAIDHTML5Tech = require('ads/vpaid/VPAIDHTML5Tech');
 
@@ -216,7 +216,7 @@ describe("vastUtil", function () {
   });
 
   describe("findSupportedVPAIDTech", function () {
-    var FLASH_APP_MIME = 'application/x-shockwave-flash';
+    // var FLASH_APP_MIME = 'application/x-shockwave-flash';
     var HTML5_APP_MIME = 'application/javascript';
 
     beforeEach(function () {
@@ -229,11 +229,11 @@ describe("vastUtil", function () {
       VPAIDHTML5Tech.supports.restore();
     });
 
-    it("must return Flash tech if it supports the passed mime type", function () {
-      VPAIDFlashTech.supports.returns(true);
-      VPAIDHTML5Tech.supports.returns(false);
-      assert.equal(vastUtil.findSupportedVPAIDTech(FLASH_APP_MIME), VPAIDFlashTech);
-    });
+    // it("must return Flash tech if it supports the passed mime type", function () {
+    //   VPAIDFlashTech.supports.returns(true);
+    //   VPAIDHTML5Tech.supports.returns(false);
+    //   assert.equal(vastUtil.findSupportedVPAIDTech(FLASH_APP_MIME), VPAIDFlashTech);
+    // });
 
     it("must return HTML tech if it supports the passed mime type", function () {
       VPAIDFlashTech.supports.returns(false);
@@ -248,17 +248,17 @@ describe("vastUtil", function () {
     });
   });
 
-  describe("isFlashSupported", function() {
-      beforeEach(function () {
-        sinon.stub(VPAIDFLASHClient, 'isSupported');
-      });
+  // describe("isFlashSupported", function() {
+  //     beforeEach(function () {
+  //       sinon.stub(VPAIDFLASHClient, 'isSupported');
+  //     });
 
-      it("must delegate in VPAIDFLASHClient.isSupported", function() {
-        VPAIDFLASHClient.isSupported.returns(false);
-        assert.isFalse(vastUtil.isFlashSupported());
+  //     it("must delegate in VPAIDFLASHClient.isSupported", function() {
+  //       VPAIDFLASHClient.isSupported.returns(false);
+  //       assert.isFalse(vastUtil.isFlashSupported());
 
-        VPAIDFLASHClient.isSupported.returns(true);
-        assert.isTrue(vastUtil.isFlashSupported());
-      });
-  });
+  //       VPAIDFLASHClient.isSupported.returns(true);
+  //       assert.isTrue(vastUtil.isFlashSupported());
+  //     });
+  // });
 });

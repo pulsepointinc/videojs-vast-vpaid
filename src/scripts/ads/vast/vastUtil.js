@@ -2,8 +2,8 @@
 
 var utilities = require('../../utils/utilityFunctions');
 var VPAIDHTML5Tech = require('../vpaid/VPAIDHTML5Tech');
-var VPAIDFlashTech = require('../vpaid/VPAIDFlashTech');
-var VPAIDFLASHClient = require('VPAIDFLASHClient/js/VPAIDFLASHClient');
+// var VPAIDFlashTech = require('../vpaid/VPAIDFlashTech');
+// var VPAIDFLASHClient = require('VPAIDFLASHClient/js/VPAIDFLASHClient');
 
 var vastUtil = {
 
@@ -135,7 +135,7 @@ var vastUtil = {
 
   //List of supported VPAID technologies
   VPAID_techs: [
-    VPAIDFlashTech,
+    // VPAIDFlashTech,
     VPAIDHTML5Tech
   ],
 
@@ -156,7 +156,7 @@ var vastUtil = {
   },
 
   isFlashSupported: function isFlashSupported() {
-    return VPAIDFLASHClient.isSupported();
+    return false; // VPAIDFLASHClient.isSupported();
   },
 
   /**
@@ -165,8 +165,8 @@ var vastUtil = {
    *
    * @param vpaidFlashLoaderPath the path to the vpaidFlashLoader swf obj.
    */
-  runFlashSupportCheck: function runFlashSupportCheck(vpaidFlashLoaderPath) {
-    VPAIDFLASHClient.runFlashTest({data: vpaidFlashLoaderPath});
+  runFlashSupportCheck: function runFlashSupportCheck() {
+    // VPAIDFLASHClient.runFlashTest({data: vpaidFlashLoaderPath});
   }
 
 };

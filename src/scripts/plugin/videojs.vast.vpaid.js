@@ -78,7 +78,7 @@ module.exports = function VASTPlugin(options) {
 
   logger.setVerbosity (settings.verbosity);
 
-  vastUtil.runFlashSupportCheck(settings.vpaidFlashLoaderPath);// Necessary step for VPAIDFLASHClient to work.
+  // vastUtil.runFlashSupportCheck(settings.vpaidFlashLoaderPath);// Necessary step for VPAIDFLASHClient to work.
 
   playerUtils.prepareForAds(player);
 
