@@ -52,7 +52,7 @@ VPAIDHTML5Tech.prototype.loadAdUnit = function loadAdUnit(containerEl, videoEl, 
       throw new VASTError(VPAIDHTML5Tech.INVALID_DOM_CONTAINER_EL);
     }
 
-    if (!dom.isDomElement(video) || video.tagName.toLowerCase() !== 'video') {
+    if (!video || video.tagName.toLowerCase() !== 'video') {
       throw new VASTError(VPAIDHTML5Tech.INVALID_DOM_CONTAINER_EL);
     }
 
